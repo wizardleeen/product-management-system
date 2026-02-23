@@ -148,5 +148,6 @@ async def delete_product(product_id: int):
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))
+    # Use port 9000 as required by the platform
+    port = int(os.environ.get("PORT", 9000))
     uvicorn.run(app, host="0.0.0.0", port=port)
