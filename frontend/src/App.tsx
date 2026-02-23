@@ -23,7 +23,8 @@ interface ProductFormData {
   status: 'active' | 'inactive'
 }
 
-const API_URL = '/api'
+// Backend API URL - change this to your backend URL in production
+const API_URL = 'https://product-management-system1.kyvy.me/api'
 
 function App() {
   const [products, setProducts] = useState<Product[]>([])
@@ -55,7 +56,7 @@ function App() {
       setProducts(response.data)
       setError('')
     } catch (err) {
-      setError('获取产品列表失败')
+      setError('获取产品列表失败，请确保后端服务正在运行')
       console.error(err)
     } finally {
       setLoading(false)
